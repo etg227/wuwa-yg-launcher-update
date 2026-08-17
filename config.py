@@ -10,7 +10,7 @@ except ImportError:
 from src.task.process_feature import process_feature
 
 # 开发仓库固定为 dev，发布时由 CI 写入 tag。
-version = "v1.0.2"
+version = "v1.0.3"
 
 
 def _find_most_recently_run_pc_exe():
@@ -251,8 +251,7 @@ config = {
     'launcher_error_log_file': 'logs/launcher_error.log',
     'version': version,
     'onetime_tasks': [  # tasks to execute
-        # 椰果启动器隐藏任务
-        ["src.task.AxisPlaybackTask", "AxisPlaybackTask"],
+        # 椰果启动器轴内置在角色逻辑里，不再需要单独的轴播放任务。
     ], 'trigger_tasks': [
         # 自动战斗（角色逻辑），由椰果启动器页开关，不显示触发页
         ["src.task.AutoCombatTask", "AutoCombatTask"],
