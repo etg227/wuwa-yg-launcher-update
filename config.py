@@ -10,7 +10,7 @@ except ImportError:
 from src.task.process_feature import process_feature
 
 # 开发仓库固定为 dev，发布时由 CI 写入 tag。
-version = "v1.0.4"
+version = "v1.0.5"
 
 
 def _find_most_recently_run_pc_exe():
@@ -144,7 +144,10 @@ key_config_option = ConfigOption('Game Hotkey', {
 char_config_option = ConfigOption('Character Config', {
     'Iuno C6': False,
     'Chisa DPS': False,
-}, description='Character Config', show_at_tab=False, icon=Icon.PEOPLE)
+    'Suisui Signature Weapon': True,
+}, description='Character Config', show_at_tab=False, icon=Icon.PEOPLE, config_description={
+    'Suisui Signature Weapon': '穗穗没有专武时，秧千穗轴的循环会多打一个 E',
+})
 
 monthly_card_config_option = ConfigOption('Monthly Card Config', {
     'Check Monthly Card': True,
